@@ -1,28 +1,24 @@
 extends Node2D
 
-# Connecting nodes based EXACTLY on your image layout
-@onready var start_button = get_node_or_null("VBoxContai/Start")
-@onready var quit_button = get_node_or_null("VBoxContai/Quit")
-
 func _ready() -> void:
-	print("Title screen script is officially running!")
-	
-	# Manually connect the clicks using your exact node names
-	if start_button:
-		start_button.pressed.connect(_on_start_pressed)
-	if quit_button:
-		quit_button.pressed.connect(_on_quit_pressed)
+	print("Title screen script is running with zero errors!")
 
-func _process(delta: float) -> void:
-	# Backup keyboard trigger
+func _process(_delta: float) -> void:
+	# Keep the spacebar shortcut active as a backup layout test!
 	if Input.is_key_pressed(KEY_SPACE):
 		_on_start_pressed()
 
+# This triggers when your visual Start Button is clicked
 func _on_start_pressed() -> void:
-	print("Start button triggered successfully!")
-	# This loads your purple gameplay scene file listed in your FileSystem
-	get_tree().change_scene_to_file("res://level_scene.tscn")
-
+	print("Start button clicked! Attempting to load level...")
+	
+	# Safety check: prints an error message instead of crashing if the path is wrong
+	var path = "res://level_scene.tscn"
+	if ResourceLoader.exists(path):
+		get_tree().change_scene_to_file(path)
+	else:
+		print("CRITICAL ERROR: Godot cannot find a file named level_scene.tscn in your project folder!")
+# This triggers when your visual Quit Button is clicked
 func _on_quit_pressed() -> void:
-	print("Quit button triggered successfully!")
+	print("Quit button clicked!")
 	get_tree().quit()
