@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://du0ltbwalhxfm"]
+
+[ext_resource type="PackedScene" uid="uid://c131cnbgtyi7q" path="res://player.tscn" id="1_4bqly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(609, 78.5)
+
+[node name="minigame" type="Node2D" unique_id=368344021]
+
+[node name="scrolling background" type="Parallax2D" parent="." unique_id=1640109422]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="scrolling background" unique_id=2132498939]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=570260546]
+position = Vector2(159, 139)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=886796724]
+offset_left = 272.0
+offset_top = 388.0
+offset_right = 853.0
+offset_bottom = 456.0
+color = Color(0.009742338, 0.6134457, 0.8018599, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=636028464]
+position = Vector2(559.5, 423.25)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="Player" parent="." unique_id=754174566 instance=ExtResource("1_4bqly")]
+position = Vector2(70, -82)

@@ -1,23 +1,28 @@
 extends Node2D
 
+# Connecting nodes based EXACTLY on your image layout
+@onready var start_button = get_node_or_null("VBoxContai/Start")
+@onready var quit_button = get_node_or_null("VBoxContai/Quit")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print("Title screen script is officially running!")
+	
+	# Manually connect the clicks using your exact node names
+	if start_button:
+		start_button.pressed.connect(_on_start_pressed)
+	if quit_button:
+		quit_button.pressed.connect(_on_quit_pressed)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://level_scene.tscn")
-
+	# Backup keyboard trigger
+	if Input.is_key_pressed(KEY_SPACE):
+		_on_start_pressed()
 
 func _on_start_pressed() -> void:
-	pass # Replace with function body.
-
+	print("Start button triggered successfully!")
+	# This loads your purple gameplay scene file listed in your FileSystem
+	get_tree().change_scene_to_file("res://level_scene.tscn")
 
 func _on_quit_pressed() -> void:
+	print("Quit button triggered successfully!")
 	get_tree().quit()

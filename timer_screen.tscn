@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bnsqgaqxfkqca"]
+
+[ext_resource type="Script" uid="uid://vgf6udf6ataq" path="res://timer_screen.gd" id="1_k5vih"]
+
+[node name="timer_screen" type="Node2D" unique_id=547691863]
+script = ExtResource("1_k5vih")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=167871918]
+offset_left = 803.0
+offset_top = 20.0
+offset_right = 1017.0
+offset_bottom = 122.0
+theme_override_font_sizes/normal_font_size = 40
+text = "timer"

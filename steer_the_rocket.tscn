@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://bgx3mmy660rik"]
+[gd_scene format=3 uid="uid://ddwo3vidg4yl0"]
 
-[ext_resource type="Script" uid="uid://dx36leltndwcy" path="res://node_2d.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dx36leltndwcy" path="res://node_2d.gd" id="1_i8swt"]
 
 [node name="Steer The Rocket" type="Node2D" unique_id=1399048975]
 process_mode = 3
-script = ExtResource("1_wtcfe")
+script = ExtResource("1_i8swt")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1522220766]
 offset_right = 1152.0
