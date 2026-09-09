@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c5kkjhapekcuu"]
+
+[ext_resource type="Texture2D" uid="uid://oqf8ubgesp3w" path="res://scenes/Screenshot 2026-09-09 111309.png" id="1_3vyb7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 126.14278
+
+[node name="Player" type="CharacterBody2D" unique_id=1160305576]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=744189813]
+position = Vector2(343.62503, 454.00003)
+scale = Vector2(0.39089763, 0.3865877)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=477960286]
+position = Vector2(345, 452)
+shape = SubResource("CircleShape2D_xrivr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1765390617]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=481710099]
+position = Vector2(345, 452)
+shape = SubResource("CircleShape2D_xrivr")

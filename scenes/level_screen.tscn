@@ -1,3 +1,63 @@
 [gd_scene format=3 uid="uid://iqola5gox0ui"]
 
-[node name="Node2D" type="Node2D" unique_id=868484786]
+[ext_resource type="Script" uid="uid://c550oquris6sh" path="res://scenes/timer_screen.gd" id="1_g5mqe"]
+[ext_resource type="Texture2D" uid="uid://c3ap344dcvvf4" path="res://Screenshot 2026-09-09 102009.png" id="2_mqw8u"]
+[ext_resource type="Texture2D" uid="uid://nbyjvyh6jbu2" path="res://Screenshot 2026-09-09 105535.png" id="3_wehtb"]
+
+[node name="LevelScreen" type="Node2D" unique_id=868484786]
+script = ExtResource("1_g5mqe")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1021191689]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_mqw8u")
+
+[node name="GarlicContainer" type="HBoxContainer" parent="." unique_id=1468585833]
+offset_left = 206.0
+offset_top = 56.0
+offset_right = 940.0
+offset_bottom = 192.0
+
+[node name="Garlic" type="TextureRect" parent="GarlicContainer" unique_id=686289563]
+layout_mode = 2
+texture = ExtResource("3_wehtb")
+expand_mode = 3
+
+[node name="Garlic2" type="TextureRect" parent="GarlicContainer" unique_id=877165454]
+layout_mode = 2
+texture = ExtResource("3_wehtb")
+expand_mode = 3
+
+[node name="Garlic3" type="TextureRect" parent="GarlicContainer" unique_id=323408122]
+layout_mode = 2
+texture = ExtResource("3_wehtb")
+expand_mode = 3
+
+[node name="Garlic4" type="TextureRect" parent="GarlicContainer" unique_id=476826495]
+layout_mode = 2
+texture = ExtResource("3_wehtb")
+expand_mode = 3
+
+[node name="Garlic5" type="TextureRect" parent="GarlicContainer" unique_id=1210447409]
+layout_mode = 2
+texture = ExtResource("3_wehtb")
+expand_mode = 3
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1631903924]
+offset_left = 503.0
+offset_top = 270.0
+offset_right = 659.0
+offset_bottom = 338.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=650508674]
+offset_left = 538.0
+offset_top = 483.0
+offset_right = 629.0
+offset_bottom = 541.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0
+"

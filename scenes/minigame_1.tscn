@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://dr3e5ve3bahat"]
+
+[ext_resource type="Script" uid="uid://bbscr7la8gwm7" path="res://scenes/minigame_1.gd" id="1_fa05o"]
+[ext_resource type="Texture2D" uid="uid://c3ap344dcvvf4" path="res://Screenshot 2026-09-09 102009.png" id="1_tk6fs"]
+[ext_resource type="PackedScene" uid="uid://c5kkjhapekcuu" path="res://scenes/player.tscn" id="2_og05i"]
+[ext_resource type="Texture2D" uid="uid://nbyjvyh6jbu2" path="res://Screenshot 2026-09-09 105535.png" id="3_lmjug"]
+[ext_resource type="Script" uid="uid://su3wf26lo8ok" path="res://scenes/garlic.gd" id="3_v5ebm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(1197.875, 99)
+
+[sub_resource type="Animation" id="Animation_lmjug"]
+length = 0.033333335
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(936, 231), Vector2(937, 235)]
+}
+
+[sub_resource type="Animation" id="Animation_v5ebm"]
+resource_name = "floating"
+length = 1.1
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(270, 431), Vector2(266, 382)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fa05o"]
+_data = {
+&"RESET": SubResource("Animation_lmjug"),
+&"floating": SubResource("Animation_v5ebm")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 98.005104
+
+[node name="minigame_1" type="Node2D" unique_id=25474687]
+script = ExtResource("1_fa05o")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1734799034]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1541821394]
+offset_right = 1157.0
+offset_bottom = 648.0
+texture = ExtResource("1_tk6fs")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=574765788]
+position = Vector2(-6, 3)
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1281654772]
+offset_left = 1.0
+offset_top = 604.0
+offset_right = 1201.0
+offset_bottom = 687.0
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1761458397]
+position = Vector2(599.0625, 642)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1379948207]
+position = Vector2(-63, -333)
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1985705364]
+offset_left = 545.0
+offset_top = 746.0
+offset_right = 1697.0
+offset_bottom = 829.0
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=284862666]
+position = Vector2(1121.5625, 784)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Player" parent="." unique_id=1160305576 instance=ExtResource("2_og05i")]
+position = Vector2(-259, 42)
+
+[node name="Garlic" type="Node2D" parent="." unique_id=1432255360]
+script = ExtResource("3_v5ebm")
+
+[node name="Garlic" type="TextureRect" parent="Garlic" unique_id=588627970]
+offset_left = 936.0
+offset_top = 231.0
+offset_right = 1085.1655
+offset_bottom = 378.99634
+texture = ExtResource("3_lmjug")
+expand_mode = 3
+
+[node name="animation" type="AnimationPlayer" parent="Garlic" unique_id=2025547047]
+root_node = NodePath("../Garlic")
+libraries/ = SubResource("AnimationLibrary_fa05o")
+
+[node name="Area2D" type="Area2D" parent="Garlic" unique_id=1582737684]
+position = Vector2(616, 836)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=804462999]
+position = Vector2(-278, -329)
+shape = SubResource("CircleShape2D_xrivr")

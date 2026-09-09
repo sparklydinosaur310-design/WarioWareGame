@@ -1,39 +1,28 @@
 extends Node2D
+@onready var timer: RichTextLabel = $timer #literally just the richlabeltext
 
-# Connects your screen objects to the code automatically
-@onready var rocket = get_node_or_null("Rocket") or get_node_or_null("ColorRect")
-@onready var asteroid = get_node_or_null("Asteroid")
+var time : float
 
-var game_over = false
-var time_left = 4.0 # WarioWare games last exactly 4 seconds!
-
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("Rocket gameplay scene has started!")
-	
-	# Place rocket at bottom middle, asteroid near top middle
-	if rocket:
-		rocket.position = Vector2(500, 500)
-	if asteroid:
-		asteroid.position = Vector2(500, 100)
+	pass
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if game_over:
-		return
-		
-	# 1. Handle the 4-second countdown clock
-	time_left -= delta
-	if time_left <= 0:
-		win_game()
+	timer.text = str(snapped(time, 0.10)) # this makes names easier
 
-	# 2. Steer the rocket left and right with arrow keys
-	if rocket:
-		if Input.is_action_pressed("ui_left"):
-			rocket.position.x -= 350 * delta
-		if Input.is_action_pressed("ui_right"):
-			rocket.position.x += 350 * delta
-
-func win_game() -> void:
-	game_over = true
-	print("You Survived! Clear!")
-	# This sends you back to the start screen after winning
-	get_tree().change_scene_to_file("res://steer_the_rocket.tscn")
+func Timer(start_time: float): # making a new function for timer countdown!
+	# we want the timer to go down, and when it reaches 0 it transitions 
+	# to the next scene!
+	
+	time = start_time
+	
+	while time > 0.0: # run if timer hasnt reached 0
+		await wait(0.10)
+		time = time - 0.10
+	
+	#when timer reaches 0
+	return
+	
+func wait(seconds: float) -> void: # write this simple function out for wait!
+	await get_tree().create_timer(seconds).timeout # makes u wait
