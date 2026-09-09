@@ -1,3 +1,68 @@
 [gd_scene format=3 uid="uid://b6ri852gtascf"]
 
+[ext_resource type="Script" uid="uid://q8hodolifqv8" path="res://scenes/minigame_2.gd" id="1_dqa6p"]
+[ext_resource type="Texture2D" uid="uid://c3ap344dcvvf4" path="res://Screenshot 2026-09-09 102009.png" id="1_xdwh2"]
+[ext_resource type="Texture2D" uid="uid://nbyjvyh6jbu2" path="res://Screenshot 2026-09-09 105535.png" id="3_c3ytc"]
+[ext_resource type="Script" uid="uid://cbfhs0jcvv44f" path="res://scenes/button_1.gd" id="4_eachr"]
+[ext_resource type="PackedScene" uid="uid://cl5laddl87wx2" path="res://scenes/themed_timer.tscn" id="5_6tcq3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ju4f3"]
+size = Vector2(1197.875, 99)
+
 [node name="Minigame_2" type="Node2D" unique_id=1057248959]
+script = ExtResource("1_dqa6p")
+
+[node name="Timer" parent="." unique_id=7167672 instance=ExtResource("5_6tcq3")]
+position = Vector2(812, 105.99997)
+rotation = 3.1415927
+scale = Vector2(135.56665, -593.7633)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1767870756]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1158789724]
+offset_right = 1157.0
+offset_bottom = 648.0
+texture = ExtResource("1_xdwh2")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=1426666187]
+position = Vector2(-6, 3)
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1795535585]
+offset_left = 1.0
+offset_top = 604.0
+offset_right = 1201.0
+offset_bottom = 687.0
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=584941655]
+position = Vector2(599.0625, 642)
+shape = SubResource("RectangleShape2D_ju4f3")
+
+[node name="Button_1" type="TextureButton" parent="." unique_id=2030564149]
+offset_left = 97.0
+offset_top = 59.0
+offset_right = 609.0
+offset_bottom = 567.0
+scale = Vector2(0.2889729, 0.2117506)
+texture_normal = ExtResource("3_c3ytc")
+script = ExtResource("4_eachr")
+
+[node name="Button_2" type="TextureButton" parent="." unique_id=2084627350]
+offset_left = 818.0
+offset_top = 442.99997
+offset_right = 1330.0
+offset_bottom = 951.0
+scale = Vector2(0.2889729, 0.2117506)
+texture_normal = ExtResource("3_c3ytc")
+script = ExtResource("4_eachr")
+
+[node name="Button_3" type="TextureButton" parent="." unique_id=1986443774]
+offset_left = 963.0
+offset_top = 28.000008
+offset_right = 1475.0
+offset_bottom = 536.0
+scale = Vector2(0.2889729, 0.2117506)
+texture_normal = ExtResource("3_c3ytc")
+script = ExtResource("4_eachr")
