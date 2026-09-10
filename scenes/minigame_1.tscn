@@ -218,7 +218,7 @@ position = Vector2(616, 836)
 position = Vector2(415, -532)
 shape = SubResource("CircleShape2D_xrivr")
 
-[node name="Player" parent="." unique_id=1160305576 instance=ExtResource("2_og05i")]
+[node name="Player" parent="." unique_id=1160305576 groups=["player"] instance=ExtResource("2_og05i")]
 position = Vector2(795, 79)
 
 [node name="timer" type="RichTextLabel" parent="." unique_id=555796116]

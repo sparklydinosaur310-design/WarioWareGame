@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bi2at01ymdvls"]
+
+[ext_resource type="Script" uid="uid://noti1bsqfgvk" path="res://scenes/win_screen.gd" id="1_wv5lq"]
+[ext_resource type="Texture2D" uid="uid://m0oqe0elpbcb" path="res://Screenshot 2026-09-10 152522.png" id="2_erk2x"]
+
+[node name="Node2D" type="Node2D" unique_id=725285298]
+script = ExtResource("1_wv5lq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=136538733]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_erk2x")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1221756562]
+clip_contents = false
+offset_left = 599.0
+offset_top = 381.0
+offset_right = 1266.0
+offset_bottom = 544.0
+theme_override_constants/outline_size = 60
+theme_override_font_sizes/normal_font_size = 108
+text = "You Win!"

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cm8hfh0dk3udv"]
+
+[ext_resource type="Script" uid="uid://da5b1w57kk7bg" path="res://scenes/lose_screen.gd" id="1_uglf1"]
+[ext_resource type="Texture2D" uid="uid://oqigiag2qq5y" path="res://Screenshot 2026-09-10 152541.png" id="2_1n1m7"]
+
+[node name="Node2D" type="Node2D" unique_id=984902475]
+script = ExtResource("1_uglf1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=760006753]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_1n1m7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=590952788]
+clip_contents = false
+offset_left = 550.0
+offset_top = 357.0
+offset_right = 1266.0
+offset_bottom = 554.0
+theme_override_constants/outline_size = 60
+theme_override_font_sizes/normal_font_size = 108
+text = "You Lose!"
