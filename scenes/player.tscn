@@ -1,23 +1,25 @@
 [gd_scene format=3 uid="uid://c5kkjhapekcuu"]
 
 [ext_resource type="Texture2D" uid="uid://oqf8ubgesp3w" path="res://scenes/Screenshot 2026-09-09 111309.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://1bhgi2tn0t5i" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
-radius = 126.14278
+radius = 43.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1160305576]
+script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=744189813]
-position = Vector2(343.62503, 454.00003)
-scale = Vector2(0.39089763, 0.3865877)
+position = Vector2(312, 487)
+scale = Vector2(0.21134649, 0.19723871)
 texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=477960286]
-position = Vector2(345, 452)
+position = Vector2(312, 490)
 shape = SubResource("CircleShape2D_xrivr")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1765390617]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=481710099]
-position = Vector2(345, 452)
+position = Vector2(312, 489)
 shape = SubResource("CircleShape2D_xrivr")

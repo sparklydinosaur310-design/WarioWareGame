@@ -9,6 +9,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(1197.875, 99)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vc5od"]
+size = Vector2(300, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1cg4"]
+size = Vector2(187, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpvfh"]
+size = Vector2(358.88727, 106.12955)
+
 [sub_resource type="Animation" id="Animation_lmjug"]
 length = 0.033333335
 loop_mode = 2
@@ -74,7 +83,63 @@ offset_bottom = 687.0
 color = Color(0.50980395, 1, 0.50980395, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1761458397]
-position = Vector2(599.0625, 642)
+position = Vector2(599, 675)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Platform8" type="StaticBody2D" parent="." unique_id=1856947943]
+position = Vector2(-6, 3)
+
+[node name="ColorRect" type="ColorRect" parent="Platform8" unique_id=290547400]
+offset_left = 351.0
+offset_top = 79.0
+offset_right = 672.0
+offset_bottom = 162.0
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform8" unique_id=1298796369]
+position = Vector2(512, 124)
+shape = SubResource("RectangleShape2D_vc5od")
+
+[node name="Platform5" type="StaticBody2D" parent="." unique_id=1419669951]
+position = Vector2(-6, 3)
+
+[node name="ColorRect" type="ColorRect" parent="Platform5" unique_id=1758769563]
+offset_left = 279.0
+offset_top = 276.0
+offset_right = 509.0
+offset_bottom = 359.0
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=153368525]
+position = Vector2(383, 331)
+shape = SubResource("RectangleShape2D_j1cg4")
+
+[node name="Platform7" type="StaticBody2D" parent="." unique_id=1167728640]
+position = Vector2(-6, 3)
+
+[node name="ColorRect" type="ColorRect" parent="Platform7" unique_id=983087813]
+offset_left = -78.0
+offset_top = 175.0
+offset_right = 152.0
+offset_bottom = 258.0
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform7" unique_id=2117264917]
+position = Vector2(37, 229)
+shape = SubResource("RectangleShape2D_j1cg4")
+
+[node name="Platform6" type="StaticBody2D" parent="." unique_id=352768867]
+position = Vector2(-6, 3)
+
+[node name="ColorRect" type="ColorRect" parent="Platform6" unique_id=375379337]
+offset_left = -907.0
+offset_top = 452.0
+offset_right = 293.0
+offset_bottom = 535.0
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6" unique_id=1566568599]
+position = Vector2(-332, 516)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=1379948207]
@@ -88,11 +153,48 @@ offset_bottom = 829.0
 color = Color(0.50980395, 1, 0.50980395, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=284862666]
-position = Vector2(1121.5625, 784)
+position = Vector2(1160, 808)
 shape = SubResource("RectangleShape2D_xrivr")
 
-[node name="Player" parent="." unique_id=1160305576 instance=ExtResource("2_og05i")]
-position = Vector2(-259, 42)
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1766289779]
+position = Vector2(-63, -333)
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=1549319111]
+offset_left = -25.0
+offset_top = 1146.0001
+offset_right = 1127.0
+offset_bottom = 1227.0001
+rotation = -1.5593157
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=884346509]
+position = Vector2(9, 678)
+rotation = 1.5682577
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=108150014]
+position = Vector2(-6, 3)
+
+[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=196049972]
+offset_left = 1260.0
+offset_top = -182.00002
+offset_right = 2460.0
+offset_bottom = -99.000015
+rotation = 1.5898367
+color = Color(0.50980395, 1, 0.50980395, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=605080882]
+position = Vector2(1211, 456)
+rotation = 1.559779
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Platform9" type="StaticBody2D" parent="." unique_id=1934648426]
+position = Vector2(-6, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform9" unique_id=1030231619]
+position = Vector2(537, 313)
+rotation = 1.559779
+shape = SubResource("RectangleShape2D_xpvfh")
 
 [node name="Garlic" type="Node2D" parent="." unique_id=1432255360]
 script = ExtResource("3_v5ebm")
@@ -113,5 +215,20 @@ libraries/ = SubResource("AnimationLibrary_fa05o")
 position = Vector2(616, 836)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=804462999]
-position = Vector2(-278, -329)
+position = Vector2(415, -532)
 shape = SubResource("CircleShape2D_xrivr")
+
+[node name="Player" parent="." unique_id=1160305576 instance=ExtResource("2_og05i")]
+position = Vector2(795, 79)
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=555796116]
+offset_left = 45.0
+offset_top = 7.0
+offset_right = 454.0
+offset_bottom = 99.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 60
+text = "0.0"
+
+[connection signal="garlic_collected" from="Garlic" to="." method="_on_garlic_garlic_collected"]
+[connection signal="body_entered" from="Garlic/Area2D" to="Garlic" method="_on_area_2d_body_entered"]

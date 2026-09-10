@@ -3,8 +3,6 @@ extends Node2D
 @onready var garlic: TextureRect = $GarlicContainer/Garlic
 @onready var garlic_2: TextureRect = $GarlicContainer/Garlic2
 @onready var garlic_3: TextureRect = $GarlicContainer/Garlic3
-@onready var garlic_4: TextureRect = $GarlicContainer/Garlic4
-@onready var garlic_5: TextureRect = $GarlicContainer/Garlic5
 @onready var level: RichTextLabel = $Level
 @onready var timer: RichTextLabel = $Timer
 
@@ -44,7 +42,6 @@ func _process(delta: float) -> void: # runs EVERY FRAME
 			garlic.hide()
 			garlic_2.hide()
 			garlic_3.hide()
-			garlic_4.hide()
 		0:
 			garlic_container.hide() # just hides everything
 	

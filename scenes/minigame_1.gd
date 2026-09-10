@@ -1,28 +1,32 @@
 extends Node2D
-@onready var timer: RichTextLabel = $timer #literally just the richlabeltext
+@onready var timer: RichTextLabel = $timer
 
-var time : float
+var time: float
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	Timer(15.0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	timer.text = str(snapped(time, 0.10)) # this makes names easier
+	timer.text = str(snapped(time, 0.10))
 
-func Timer(start_time: float): # making a new function for timer countdown!
-	# we want the timer to go down, and when it reaches 0 it transitions 
-	# to the next scene!
-	
+func Timer(start_time: float):
 	time = start_time
-	
-	while time > 0.0: # run if timer hasnt reached 0
+	while time > 0.0:
 		await wait(0.10)
-		time = time - 0.10
-	
-	#when timer reaches 0
-	return
-	
-func wait(seconds: float) -> void: # write this simple function out for wait!
-	await get_tree().create_timer(seconds).timeout # makes u wait
+		time -= 0.10
+	_on_time_up()  # <-- this is the missing piece
+
+func _on_time_up() -> void:
+	timer.text = "Time's up!"
+	Global.lives -= 1
+	Global.minigames_done -= 1  # cancel out the increment level_screen did to get here
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://scenes/level_screen.tscn")
+
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+
+func _on_garlic_garlic_collected() -> void:
+	timer.text = "You got the garlic!"
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://scenes/level_screen.tscn")
