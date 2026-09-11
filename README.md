@@ -9,8 +9,7 @@ A fast-paced collection of rapid-fire minigames heavily inspired by the WarioWar
 
 ## 📷 Gameplay Preview
 <!-- Take a quick screenshot or a short moving GIF of your minigames in action, upload it here, and replace this link! -->
-![Gameplay Preview](preview.png)
-
+![Gameplay Preview](preview.png.png)
 ---
 
 ## ✨ Features
